@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>ToDo</title>
     <link th:href="@{/css/site.css(v=${r})}" rel="stylesheet"/>
-    <script type="text/javascript" th:src="@{/js/actions.js}"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,6 @@
 </head>
 <body>
 <div class="popup hidden">
-
     <span id="editingId"></span>
     <div class="base-window">
         <div>
@@ -34,7 +33,6 @@
                 <h3>Boards</h3>
             </div>
         </div>
-
         <div class="board" th:each="board: ${boards}">
             <ul class="actions">
                 <li class="edit-action">
@@ -52,8 +50,6 @@
                 <p th:text="${board.getName()}"></p>
             </a>
         </div>
-
-
         <div class="board add-board">
             <div class="board-container">
                 <p>+ Add board</p>
@@ -64,7 +60,6 @@
         <div class="task-header">
             <h3 id="board-name" th:text="${boardName}">#board-name</h3>
         </div>
-
         <div th:each="task: ${tasks}" class="task" th:classappend="${task.isCompleteness()} ? 'task-completed' : ''">
             <div class="task-content">
                 <svg style="stroke: black; stroke-width: 2; fill:transparent;">
@@ -85,7 +80,6 @@
                 </li>
             </ul>
         </div>
-
         <div class="task add-task">
             <div class="task-content">
                 <svg style="stroke: black; stroke-width: 2; fill: transparent;">
@@ -93,10 +87,7 @@
                 </svg>
                 <p>Add task</p>
             </div>
-
         </div>
-
-
     </div>
 </section>
 <script type="text/javascript" th:src="@{/js/jsfile.js(v=${r})}"></script>
