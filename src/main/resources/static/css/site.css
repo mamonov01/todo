@@ -1,0 +1,268 @@
+body {
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+}
+header {
+	position: fixed;
+	left: 0;
+	right: 0;
+	height: 50px;
+	background: #000;
+	z-index: 1;
+}
+header a, header span {
+	font-size: 22px;
+	color: #fff;
+	display: inline-block;
+	padding: 15px;
+	margin-left: 150px;
+	cursor: pointer;
+	text-decoration: none;
+
+}
+header .login-popup {
+	float: right;
+	padding: 15px;
+	margin-right: 50px;
+}
+
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+}
+.main {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+.boards {
+	vertical-align: top;
+	display: inline-block;
+	margin-top: 50px;
+	padding-top: 50px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 25%;
+	background: #eee; /* q */
+	overflow-y: auto;
+}
+.board, .board-header {
+	transition: .2s background;
+}
+.board-header {
+	margin: 10px 25px;
+}
+.board .board-container {
+	display: inline-block;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: black;
+	display: block;
+}
+.board {
+	cursor: pointer;
+}
+.board p {
+	vertical-align: middle;
+	display: inline-block;
+	width: 100%;
+}
+.board-header h3, .task-header h3 {
+	border-bottom: solid 1px #000;
+}
+.board:hover {
+	background: #ddd;
+}
+.board:active {
+	background: #ccc;
+}
+.board p, .board span {
+	display: inline;
+}
+.board span {
+	margin-left: 5px;
+	color: #aaa;
+	font-size: 15px;
+}
+.board .actions .edit-action, .board .actions .remove-action {
+	padding: 9px;
+
+}
+.tasks {
+	position: absolute;
+	overflow-y: auto;
+	margin-left: 25%;
+	vertical-align: top;
+	padding: 50px 30px 30px;
+	margin-top: 50px;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0%;
+}
+.task-header {
+	margin: 10px 0 10px 0;
+}
+.task {
+	margin: 4px 0;
+	background: #eee;
+	width: 100%;
+}
+.task-content {
+	padding: 10px 25px;
+}
+.task-content, .actions {
+	display: inline-block;
+}
+.task svg, .task p {
+	vertical-align: middle;
+	display: inline;
+	user-select: none;
+}
+.task svg {
+	transition: .15s;
+	width: 18px;
+	height: 18px;
+}
+.task span {
+	display: none;
+}
+.task-completed svg {
+	fill: black !important;
+}
+.edit-action, .remove-action {
+	display: inline-block;
+	padding: 10px 10px;
+}
+.edit-action:hover {
+	background: #bebebe;
+
+}
+.remove-action:hover {
+	background: #bebebe;
+}
+.task-content {
+	width: 80%;
+}
+.task-content p {
+	margin-left: 5px;
+}
+.actions {
+	padding: 0;
+	margin: 0;
+	transition: .2s opacity;
+	opacity: 0;
+	height: 100%;
+	float: right;
+}
+.task:hover .actions, .board:hover .actions {
+	opacity: 1;
+}
+#editingId{
+	display: none;
+}
+
+
+.hidden {
+	display: none;
+}
+
+/* POPUP WINDOW */
+.popup {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 10;
+}
+.base-window {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #fff;
+	border-radius: 3px;
+	width: 700px;
+	height: 150px;
+	padding: 20px;
+}
+.base-window div {
+	min-height: 100%;
+	position: relative;
+}
+.base-window div h2 {
+	margin-bottom: 25px;
+}
+#popup-input, .auth input {
+	width: 100%;
+	border: none;
+	padding: 10px 0;
+	border-bottom: solid 1px #aaa;
+	outline: none;
+	transition: .2s border-bottom;
+}
+#popup-input:focus, .auth input:focus {
+	border-bottom: solid 1px #2596be;
+}
+#popup-submit {
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background: #000;
+	border: none;
+	border-radius: 3px;
+	padding: 10px;
+	color: #fff;
+}
+
+/* authorize window */
+
+.auth {
+	width: 400px;
+	height: 326px;
+}
+.auth input {
+	margin: 0 0 10px 0;
+}
+#auth h2 {
+	margin-bottom: 15px ;
+}
+.auth a {
+	color: #000;
+	display: block;
+	margin: 4px 0 10px 0;
+}
+.btn {
+	margin: 5px 0;
+	text-align: center;
+	bottom: 20px;
+	left: 20px;
+	right: 20px;
+	width: auto;
+	border: none;
+	border-radius: 3px;
+	padding: 10px;
+	cursor: pointer;
+}
+.login-btn, .sinup-btn {
+	background: #000;
+	color: #fff;
+	font-size: 17px;
+	width: 100%;
+}
+.singup-btn {
+	background: #fff;
+	border: #000 1px solid;
+	color: #000;
+	text-decoration: none;
+}
+#auth-error {
+	color: orange;
+	margin-bottom: 10px;
+}
